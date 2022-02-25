@@ -1,0 +1,42 @@
+﻿@model CoreRepo.Models.Entity.COURSEMODEL
+
+@{
+    ViewData["Title"] = "Detay";
+}
+
+<h1>Detay</h1>
+
+<div>
+    <h4>Egitmen</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.egitmen.İsim)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.egitmen.İsim)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.egitmen.Soyisim)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.egitmen.Soyisim)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.egitmen.Adres.Sehir)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.egitmen.Adres.Sehir)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.egitmen.Adres.Ülke)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.egitmen.Adres.Ülke)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Güncelle", "Guncelle", new { id = Model.egitmen.Id }, new { @class = "btn btn-warning" })
+    <a asp-action="Index">Listeye Geri Dön</a>
+</div>

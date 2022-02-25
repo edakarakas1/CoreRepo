@@ -1,0 +1,10 @@
+﻿@model CoreRepo.Models.Entity.Request
+@{
+    ViewData["Title"] = "Tesekkur";
+}
+
+<div class="text-center">
+    <h2>Teşekkürler @Model.Ad.ToUpper()</h2>
+    <a asp-action="Liste" class="btn btn-success">Yakında Gelecek Kursların Listesi</a>
+</div>
+

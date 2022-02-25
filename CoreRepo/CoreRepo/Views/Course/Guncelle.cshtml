@@ -1,0 +1,54 @@
+﻿@model CoreRepo.Models.Entity.COURSEMODEL
+
+@{
+    ViewData["Title"] = ViewBag.Actionmode;
+}
+
+<h1>Guncelle</h1>
+
+<h4>Course</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="@(ViewBag.Actionmode)">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @*<div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="Course.Ad" class="control-label"></label>
+                <input asp-for="Course.Ad" class="form-control" />
+                <span asp-validation-for="Course.Ad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Course.Aciklama" class="control-label"></label>
+                <input asp-for="Course.Aciklama" class="form-control" />
+                <span asp-validation-for="Course.Aciklama" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Course.Fiyat" class="control-label"></label>
+                <input asp-for="Course.Fiyat" class="form-control" />
+                <span asp-validation-for="Course.Fiyat" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Course.Aktif" /> @Html.DisplayNameFor(model => model.Course.Aktif)
+                </label>
+
+                <div class="form-group">
+                    @Html.DropDownListFor(x => x.Course.EgitmenId, Model.egtlist, "******Eğitmen Seçiniz ******")
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Kaydet" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Listeye Geri Dön</a>
+</div>
+

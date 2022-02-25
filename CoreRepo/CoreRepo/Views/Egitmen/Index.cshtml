@@ -1,0 +1,56 @@
+﻿@model CoreRepo.Models.Entity.COURSEMODEL
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Ekle" class = "btn btn-primary" >Ekle</a>
+  
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.egitmen.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.egitmen.İsim)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.egitmen.Soyisim)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.egitmen.Adres)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.elist)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.İsim)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Soyisim)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Adres)
+                </td>
+
+                <td>
+                    @Html.ActionLink("Güncelle", "Guncelle", new { id = item.Id }, new { @class = "btn btn-success" })
+                    @Html.ActionLink("Detay", "Detay", new { id = item.Id }, new { @class = "btn btn-warning" })
+                    @Html.ActionLink("Sil", "Sil", new { id = item.Id }, new { @class = "btn btn-danger" })
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

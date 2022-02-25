@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewData["Title"] = "SignIn";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="row justify-content-md-center" style="margin-top:200px;margin-left:350px">
+    <div class="col-12">
+        <form action="SignIn" method="post">
+            <div class="col-4">
+                <label class="form-label">Kullanıcı Adı</label>
+                <input name="Kullanici" class="form-control" />
+            </div>
+
+            <div class="col-4">
+                <label class="form-label">Şifre</label>
+                <input name="Sifre" type="password" class="form-control" />
+            </div>
+            <button type="submit" class="btn btn-success col-4">Giriş</button>
+        </form>
+    </div>
+</div>
+

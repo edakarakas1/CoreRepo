@@ -1,0 +1,31 @@
+﻿@model IEnumerable<CoreRepo.Models.Entity.Request>
+@{
+    ViewData["Title"] = "Liste";
+}
+
+<h1>Liste</h1>
+
+<div class="bg-success text-white">İstek Listesi</div>
+<table class="table table-bordered table table-hover table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>İsim</th>
+            <th>Email</th>
+            <th>Telefon</th>
+            <th>Mesaj</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Ad</td>
+                <td>@item.Email</td>
+                <td>@item.Telefon</td>
+                <td>@item.Mesaj</td>
+            </tr>
+        }
+    </tbody>
+</table>
